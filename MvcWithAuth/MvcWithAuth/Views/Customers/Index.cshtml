@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MvcWithAuth.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index Customers</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>CustomerName</th>
+            <th>Discount rate</th>
+            <th>Date Of Birth</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cust in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(cust.Name, "Details", "Customers", new { id = cust.Id }, null)</td>
+                <td>@cust.MemberShipType.DiscountRate%</td>
+                <td>@cust.DOB</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

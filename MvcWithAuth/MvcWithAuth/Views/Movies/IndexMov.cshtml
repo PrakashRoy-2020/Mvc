@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MvcWithAuth.Models.Movie>
+@{
+    ViewBag.Title = "IndexMov";
+}
+
+<h2>Movie Index</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>CustomerName</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mov in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(mov.Name, "DetailsMov", "Movies", new { id = mov.Id }, null)</td>
+                
+            </tr>
+        }
+    </tbody>
+
+</table>
+
